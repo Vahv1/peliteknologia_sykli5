@@ -82,8 +82,8 @@ public class Generate : MonoBehaviour
         int spawnX = Random.Range(0, mapSizeX);
         int spawnY = Random.Range(0, mapSizeY);
         Vector3 spawnPoint = new Vector3(spawnX, spawnY, -0.5f);
-        Instantiate(tileTypes[2].tileVisual, spawnPoint, Quaternion.identity);
-        Instantiate(player, spawnPoint + new Vector3(0, 0, -0.1f), Quaternion.identity);
+        Instantiate(tileTypes[2].tileVisual, spawnPoint + new Vector3(0, 0, -0.1f), Quaternion.identity);
+        Instantiate(player, spawnPoint + new Vector3(0, 0, -0.2f), Quaternion.identity);
         return spawnPoint;
     }
 
@@ -107,7 +107,7 @@ public class Generate : MonoBehaviour
 
         // Valitaan listasta randomilla loputusruudun paikka
         Vector3 spawnPoint = validEndPositions[Random.Range(0, validEndPositions.Count)];
-        Instantiate(tileTypes[3].tileVisual, spawnPoint, Quaternion.identity);
+        Instantiate(tileTypes[3].tileVisual, spawnPoint + new Vector3(0, 0, -0.1f), Quaternion.identity);
         return spawnPoint;
     }
 
@@ -125,7 +125,7 @@ public class Generate : MonoBehaviour
         }
         // Valitaan listasta randomilla vihollisen paikka
         Vector3 spawnPoint = validEnemyPositions[Random.Range(0, validEnemyPositions.Count)];
-        Instantiate(enemy, spawnPoint + new Vector3(0, 0, -0.1f), Quaternion.identity);
+        Instantiate(enemy, spawnPoint + new Vector3(0, 0, -0.2f), Quaternion.identity);
     }
 
     // Tarkistaa onko endPoint seinän takana startPointista
